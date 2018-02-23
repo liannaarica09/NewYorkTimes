@@ -7,31 +7,31 @@
 </head>
 <body>
 	<div id="mainbody">
-		<header><h1>New York Times Search</h1></header>
+		<header><h1><i class="far fa-newspaper"></i>New York Times Search</h1></header>
 
 		<div id="searchParam">
 			<h2><i class="fas fa-th-list"></i>Search Parameters</h2>
 			<form>
 				Search Term:<br>
-				<input type="text" name="term"><br>
+				<input type="text" name="term" id="term"><br>
 
 				Number of Records to Retrieve:<br>
-				<select>
-					<option value="whatever"></option>
+				<select id="records">
+					<option value="whatever">Whatever</option>
 				</select>
 
 				Start Year (optional):<br>
-				<input type="text"><br>
+				<input id="startYear" type="text"><br>
 
 				End Year (optional):<br>
-				<input type="text"><br>
+				<input id="endYear" type="text"><br>
 			</form>
-			<div><i class="fas fa-search"></i>Search</div>
-			<div>Clear Results</div>
+			<div id="searchBtn"><i class="fas fa-search"></i>Search</div>
+			<div id="clearBtn"><i class="far fa-minus-square"></i>Clear Results</div>
 		</div>
 
 	<div id="articles"></div>
-	<h2>Top Articles</h2>
+	<h2><i class="fas fa-th-list"></i>Top Articles</h2>
 	</div>
 
 
