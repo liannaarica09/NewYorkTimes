@@ -7,17 +7,22 @@
 </head>
 <body>
 	<div id="mainbody">
-		<header><h1><i class="far fa-newspaper"></i>New York Times Search</h1></header>
+		<header><h1><i class="far fa-newspaper"></i> New York Times Search</h1></header>
 
 		<div id="searchParam">
-			<h2><i class="fas fa-th-list"></i>Search Parameters</h2>
+			<h2><i class="fas fa-th-list"></i> Search Parameters</h2>
 			<form>
 				Search Term:<br>
 				<input type="text" name="term" id="term"><br>
 
 				Number of Records to Retrieve:<br>
-				<select id="records">
-					<option value="whatever">Whatever</option>
+				<select id="pages">
+					<option id="1" value="1">1</option>
+					<option id="2" value="2">2</option>
+					<option id="3" value="3">3</option>
+					<option id ="4" value="4">4</option>
+					<option id="5" value="5">5</option>
+					<option id="6" value="6">6</option>
 				</select>
 
 				Start Year (optional):<br>
@@ -26,12 +31,12 @@
 				End Year (optional):<br>
 				<input id="endYear" type="text"><br>
 			</form>
-			<div id="searchBtn"><i class="fas fa-search"></i>Search</div>
-			<div id="clearBtn"><i class="far fa-minus-square"></i>Clear Results</div>
+			<div id="searchBtn"><i class="fas fa-search"></i> Search</div>
+			<div id="clearBtn"><i class="far fa-minus-square"></i> Clear Results</div>
 		</div>
 
 	<div id="articles"></div>
-	<h2><i class="fas fa-th-list"></i>Top Articles</h2>
+	<h2><i class="fas fa-th-list"></i> Top Articles</h2>
 	</div>
 
 
