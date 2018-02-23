@@ -8,9 +8,12 @@ var queryObj = {
 
 $(document).ready(function(){
     
-    $('#searchParam').on('click', function(r){
-        queryObj.q = $(this).attr('name').text();
-        queryObj.page = $(this).attr('value');
+    $('#searchBtn').on('click', function(r){
+        queryObj.q = $('#term').val();
+        console.log(queryObj.q);
+        queryObj.page = $(this).attr('value').val();
+        queryObj.begin_date = $('#startYear').val();
+        queryObj.end_date = $('#endYear').val();
     });
     
     var url = "https://api.nytimes.com/svc/archive/v1/2016/1.json";
