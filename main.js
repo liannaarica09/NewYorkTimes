@@ -7,8 +7,15 @@ var queryObj = {
 }
 
 $(document).ready(function(){
-    // Built by LucyBot. www.lucybot.com
-    // Built by LucyBot. www.lucybot.com
+    
+    $('#searchBtn').on('click', function(r){
+        queryObj.q = $('#term').val();
+        console.log(queryObj.q);
+        queryObj.page = $(this).attr('value').val();
+        queryObj.begin_date = $('#startYear').val();
+        queryObj.end_date = $('#endYear').val();
+    });
+    
     var url = "https://api.nytimes.com/svc/archive/v1/2016/1.json";
     url += '?' + $.param(queryObj);
 

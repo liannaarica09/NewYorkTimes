@@ -84,9 +84,18 @@ h2 {
 #searchParam {
 	border:solid black 2px;
 	border-radius: 11px;
+	font-size: 18px;
 }
 
 #articles {
 	border:solid black 2px;
 	border-radius: 11px;
+}
+
+#searchBtn {
+	
+}
+
+#clearBtn {
+
 }
