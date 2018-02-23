@@ -6,13 +6,16 @@ var queryObj = {
     // 'end_date' : '20180228',
 }
 
-$(document).ready(function(){
-    var url = '';
+const url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        
 
+$(document).ready(function(){
+    
     $('#searchBtn').on('click', function(r){
         queryObj.q = $('#term').val();
         
         queryObj.page = parseInt($('#pages').val());
+        //push dates if options set by user
         if($('#startYear').val() !== '')
             queryObj['begin_date'] = $('#startYear').val(); 
         if($('#endYear').val() !== '')
@@ -20,16 +23,26 @@ $(document).ready(function(){
         
             console.log(queryObj);
         
-        url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-        url += '?' + $.param(queryObj);
+        var qURL = url + '?' + $.param(queryObj);
 
-        console.log(url);
-        getArticles();
+        console.log(qURL);
+        getArticles(qURL);
+
+    });
+
+    $('body').on('click', '#next', function(){
+        $('#articles'
+    ).empty();
+        console.log(qURL);
+        queryObj.page++;
+        var qURL = url +  '?' + $.param(queryObj);
+        console.log(qURL);
+        getArticles(qURL);
     });
     
-    function getArticles(){
+    function getArticles(qURL){
         $.ajax({
-            url: url,
+            url: qURL,
             method: 'GET',
         }).done(function(result) {
             console.log(result);
@@ -41,7 +54,9 @@ $(document).ready(function(){
                 htmlDisplay.append('<h4>').html(e.headline.main, '<br>');
                 $('#articles').append(htmlDisplay);
             });
-
+            var nxtPage = $('<div id="next">').html("Next 10 Articles");
+            $('#articles').append(nxtPage);
+            
         }).fail(function(err) {
             throw err;
         });
