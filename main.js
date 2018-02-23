@@ -11,7 +11,7 @@ $(document).ready(function(){
     $('#searchBtn').on('click', function(r){
         queryObj.q = $('#term').val();
         console.log(queryObj.q);
-        queryObj.page = $(this).attr('value').val();
+        queryObj.page = $('#pages').val();
         queryObj.begin_date = $('#startYear').val();
         queryObj.end_date = $('#endYear').val();
     });
