@@ -93,9 +93,13 @@ h2 {
 }
 
 #searchBtn {
-	
+	display:inline;
+	background-color: black;
+	color:#fff;
 }
 
 #clearBtn {
-
+	display:inline;
+	background-color: black;
+	color:#fff;
 }
